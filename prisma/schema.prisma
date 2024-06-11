@@ -16,7 +16,7 @@ datasource db {
 
 
 model Athlete{
-  id Int @id
+  id String @id @default(cuid())
   name String
   cabor String
   gender String

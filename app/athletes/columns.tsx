@@ -7,6 +7,7 @@ import {Checkbox} from "@/components/ui/checkbox";
 // You can use a Zod schema here if you want.
 export type Athletes = {
     id: number;
+    no: number;
     name: string;
     cabor: string;
     gender: string;
@@ -46,7 +47,7 @@ export const columns: ColumnDef<Athletes>[] = [
     },
 
     {
-        accessorKey: "id",
+        accessorKey: "no",
         header: "No.",
     },
     {
