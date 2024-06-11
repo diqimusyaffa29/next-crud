@@ -8,8 +8,9 @@ import {Checkbox} from "@/components/ui/checkbox";
 export type Athletes = {
     id: number;
     name: string;
+    cabor: string;
     gender: string;
-    ktp: number;
+    ktp: string;
     kta: string;
     ttl: string;
     class: string;
@@ -51,6 +52,10 @@ export const columns: ColumnDef<Athletes>[] = [
     {
         accessorKey: "name",
         header: "Nama",
+    },
+    {
+        accessorKey: "cabor",
+        header: "Cabor",
     },
     {
         accessorKey: "gender",

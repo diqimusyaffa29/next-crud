@@ -13,6 +13,7 @@ import {
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
+import {Label} from "@/components/ui/label";
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
@@ -38,7 +39,7 @@ export function DataTable<TData, TValue>({columns, data}: DataTableProps<TData, 
 
     return (
         <>
-            <div className="flex items-center py-4">
+            <div className="flex py-4 justify-between">
                 <Input
                     placeholder="Search..."
                     value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
@@ -47,6 +48,10 @@ export function DataTable<TData, TValue>({columns, data}: DataTableProps<TData, 
                     }
                     className="max-w-sm"
                 />
+                <div className="flex gap-2">
+                    <Input className="max-w-sm" type="email" placeholder="Email" />
+                    <Button type="submit">Add Athletes</Button>
+                </div>
             </div>
             <div className="flex-1 text-sm text-muted-foreground">
                 {table.getFilteredSelectedRowModel().rows.length} of{" "}
